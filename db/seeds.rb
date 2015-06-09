@@ -1,22 +1,17 @@
-require 'faker'
-
-# Create Posts
-50.times do
+if Post.where({title: "This title is unique."}).count == 0
   Post.create!(
-    title:  Faker::Lorem.sentence,
-    body:   Faker::Lorem.paragraph
-  )
+    title: "This title is unique.",
+    body:  "This body is unique too."
+    )
 end
-posts = Post.all
 
-# Create Comments
-100.times do
+if Comment.where({body: "This comment is unique."}).count == 0
   Comment.create!(
     post: posts.sample,
-    body: Faker::Lorem.paragraph
-  )
+    body: "This comment is unique."
+    )
 end
 
 puts "Seed finished"
 puts "#{Post.count} posts created"
-puts "#{Comment.count} comments created"
+puts "#{Comment.count} comments create"
