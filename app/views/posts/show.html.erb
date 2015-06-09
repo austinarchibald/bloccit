@@ -5,8 +5,21 @@
     <p><%= @post.body %></p>
   </div>
   <div class="col-md-4">
+    <% if !@post.summary %>
+      <%= link_to "Summarize", new_topic_post_summary_path(@topic, @post, @summary), class: 'btn btn-success' %>
+    <% end %>
     <% if policy(@post).edit? %>
       <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
     <% end %>
   </div>
 </div>
+
+<% if @summary %>
+  <div class="row">
+    <div class="col-md-8">
+      <h4>
+        <p><%= @summary.body %></p>
+      </h4>
+    </div>
+  </div>
+<% end %>
