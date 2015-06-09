@@ -15,6 +15,8 @@ end
 
 gem 'bootstrap-sass'
 
+gem 'devise'
+
 # help generate development data automaticall
 gem 'faker'
 
