@@ -17,6 +17,8 @@ gem 'bootstrap-sass'
 
 gem 'devise'
 
+gem 'figaro'
+
 # help generate development data automaticall
 gem 'faker'
 
