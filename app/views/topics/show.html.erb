@@ -27,10 +27,11 @@
         </div>
       </div>
     <% end %>
-    </div>
-    <div class="col-md-4">
+    <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+  </div>
+  <div class="col-md-4">
     <% if policy(Post.new).create? %>
-    <%= link_to "New Post", new_topic_post_path(@topic), class: 'btn btn-success' %>
+      <%= link_to "New Post", new_topic_post_path(@topic), class: 'btn btn-success' %>
     <% end %>
   </div>
 </div>
