@@ -13,6 +13,10 @@ group :development do
   gem 'sqlite3'
 end
 
+group :test do
+  gem 'capybara'
+end
+
 gem 'bootstrap-sass'
 
 gem 'devise'
