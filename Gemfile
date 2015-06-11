@@ -40,6 +40,13 @@ gem 'fog'
 gem 'will_paginate', '~> 3.0.5'
 gem 'will_paginate-bootstrap'
 
+# monitoring performance
+gem 'newrelic_rpm'
+
+group :production, :development do
+  gem 'puma'
+end
+
 # Tests
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
